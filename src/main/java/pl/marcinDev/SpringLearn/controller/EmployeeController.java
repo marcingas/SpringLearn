@@ -1,14 +1,20 @@
 package pl.marcinDev.SpringLearn.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import pl.marcinDev.SpringLearn.model.Employee;
+import pl.marcinDev.SpringLearn.service.EmployeeService;
+
+import java.util.List;
 
 //responsible for handling http requests
 @RestController
 public class EmployeeController {
     //localhost:8080/employess
+    @Autowired
+    private EmployeeService eService;
     @Value("${app.name}")
     private String appName;
     @Value("${app.version}")
@@ -19,8 +25,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees")
-    public String getEmployees(){
-        return "displaying list of empl";
+    public List<Employee> getEmployees(){
+        return eService.getEmployees();
 
     }
     //localhost:8080/employees/id (user put data to our application)

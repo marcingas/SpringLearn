@@ -11,9 +11,9 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Employee {
-    @JsonProperty("full_name")
+//    @JsonProperty("full_name")
     private String name;
-    @JsonIgnore
+//    @JsonIgnore
     private Long age;
     private String location;
     private String email;
