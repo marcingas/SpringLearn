@@ -15,14 +15,6 @@ public class EmployeeController {
     //localhost:8080/employess
     @Autowired
     private EmployeeService eService;
-    @Value("${app.name}")
-    private String appName;
-    @Value("${app.version}")
-    private String appVersion;
-    @GetMapping("/version")
-    public String getAppDetails(){
-        return appName + ", " + appVersion;
-    }
 
     @GetMapping("/employees")
     public List<Employee> getEmployees(){
