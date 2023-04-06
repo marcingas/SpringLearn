@@ -23,8 +23,8 @@ public class EmployeeController {
     }
     //localhost:8080/employees/id (user put data to our application)
     @GetMapping("/employees/{id}")
-    public String getEmployee(@PathVariable Long id){
-        return "Fetching the employee details for the id " + id;
+    public Employee getEmployee(@PathVariable Long id){
+        return eService.getSingleEmployee(id);
 
     }
     @PostMapping("/employees")
