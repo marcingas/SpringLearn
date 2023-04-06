@@ -15,7 +15,7 @@ import lombok.ToString;
 @Table(name = "tbl_employee")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "id")
     private Long id;
     //    @JsonProperty("full_name")

@@ -28,8 +28,8 @@ public class EmployeeController {
 
     }
     @PostMapping("/employees")
-    public String saveEmployee(@RequestBody Employee employee){
-        return "saving the employee details to the database " + employee;
+    public Employee saveEmployee(@RequestBody Employee employee){
+        return eService.saveEmplpyee(employee);
     }
     @PutMapping("/employees/{id}")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee){
